@@ -1,6 +1,4 @@
-Certainly! Here's the Privacy Policy in Markdown format:
 
-```markdown
 # Privacy Policy
 
 Thank you for choosing our mobile game! Your privacy is important to us, and we want you to understand how we collect, use, and protect your personal information. Please review this Privacy Policy to be informed about our practices.
@@ -38,6 +36,3 @@ If you have any questions regarding our Privacy Policy or data processing, pleas
 - Email: bovvge@gmail.com
 
 Thank you for choosing our mobile game. We hope you enjoy the gaming experience!
-```
-
-Feel free to use this Markdown format for your Privacy Policy.
