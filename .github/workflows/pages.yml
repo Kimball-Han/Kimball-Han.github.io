@@ -27,7 +27,7 @@ jobs:
       - name: Stage public content only
         run: |
           mkdir -p _site
-          cp -R index.html assets kimgames filebridge app-ads.txt .nojekyll _site/
+          cp -R index.html assets kimgames kimdrop filebridge app-ads.txt .nojekyll _site/
           if [ -f CNAME ]; then cp CNAME _site/; fi
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

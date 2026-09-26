@@ -17,7 +17,7 @@ class Page(HTMLParser):
         if 'id' in a: self.ids.add(a['id'])
         for key in ['src','href']:
             if key in a:self.links.append(a[key])
-paths=[ROOT/'index.html',*sorted((ROOT/'filebridge').rglob('*.html')),*sorted((ROOT/'kimgames').rglob('*.html'))]
+paths=[ROOT/'index.html',*sorted((ROOT/'kimdrop').rglob('*.html')),*sorted((ROOT/'filebridge').rglob('*.html')),*sorted((ROOT/'kimgames').rglob('*.html'))]
 pages={p:Page(p.read_text()) for p in paths}
 errors=[]; count=0
 for p,page in pages.items():
@@ -32,6 +32,6 @@ for p,page in pages.items():
         if u.fragment and target in pages and unquote(u.fragment) not in pages[target].ids: errors.append(f'{p.name}: missing fragment {ref}')
         count+=1
 for page in ['index.html','support/index.html','privacy/index.html','en/index.html','en/support/index.html','en/privacy/index.html']:
-    if ROOT/'filebridge'/page not in pages: errors.append(f'Missing required FileBridge page: {page}')
+    if ROOT/'kimdrop'/page not in pages: errors.append(f'Missing required KimDrop page: {page}')
 if errors: raise SystemExit('\n'.join(errors))
-print(f'OK: {len(pages)} pages; {count} internal links/assets; both FileBridge languages and existing Kim Games checked.')
+print(f'OK: {len(pages)} pages; {count} internal links/assets; both KimDrop languages and existing Kim Games checked.')
