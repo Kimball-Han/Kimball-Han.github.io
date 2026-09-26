@@ -1,7 +1,36 @@
-# Kimball-Han.github.io
+# Kimball · Apps
 
-Official product, support, and privacy pages for Kim Games:
+Static official product, support and privacy pages for independent apps by Kimball. No JavaScript runtime, tracking scripts or build dependencies.
 
-- Product: <https://kimball-han.github.io/kimgames/>
-- Support: <https://kimball-han.github.io/kimgames/support/>
-- Privacy: <https://kimball-han.github.io/kimgames/privacy/>
+## FileBridge
+
+| Page | 简体中文 | English |
+| --- | --- | --- |
+| Product | https://kimball-han.github.io/filebridge/ | https://kimball-han.github.io/filebridge/en/ |
+| Support | https://kimball-han.github.io/filebridge/support/ | https://kimball-han.github.io/filebridge/en/support/ |
+| Privacy | https://kimball-han.github.io/filebridge/privacy/ | https://kimball-han.github.io/filebridge/en/privacy/ |
+
+Contact: bovvge@gmail.com. Copyright: 2026 Kimball. The public pages say “Coming soon” until a real App Store ID is available. Replace that text with the actual download link only after release. Product screenshots are real simulator captures from the App; filenames distinguish Chinese and English.
+
+## Kim Games (preserved)
+
+- Product: https://kimball-han.github.io/kimgames/
+- Support: https://kimball-han.github.io/kimgames/support/
+- Privacy: https://kimball-han.github.io/kimgames/privacy/
+
+## Preview and validate
+
+```sh
+python3 scripts/check-site.py
+python3 -m http.server 8198 --bind 127.0.0.1
+```
+
+Open `http://127.0.0.1:8198/filebridge/`. Use an HTTP server because links are rooted at the site domain.
+
+## Publish
+
+In GitHub repository Settings → Pages, set Source to **GitHub Actions**. The `pages.yml` workflow validates the site, stages only public site content, and deploys it after a push to `main` or a manual workflow run. This replaces an unused Next.js template that required a nonexistent package.json.
+
+The workflow excludes submission notes and private account materials. App Store submission materials live in the FileBridge app repository under `app-store/1.0/`, not on this public site. No credentials or review phone numbers belong here.
+
+After publishing, verify all six FileBridge URLs in a signed-out browser before using them in App Store Connect. Adding files locally does not publish them.
