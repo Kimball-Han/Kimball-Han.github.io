@@ -12,7 +12,9 @@ Static official product, support and privacy pages for independent apps by Kimba
 
 Contact: bovvge@gmail.com. Copyright: 2026 Kimball. The public pages say “Coming soon” until a real App Store ID is available. Replace that text with the actual download link only after release. Product screenshots are real simulator captures from the App; filenames distinguish Chinese and English.
 
-## Kim Games (preserved)
+## Kim Games
+
+Product and support content reflects version 1.2.0: 17 games, including Chess, with shared board-game feedback and Go capture animation.
 
 - Product: https://kimball-han.github.io/kimgames/
 - Support: https://kimball-han.github.io/kimgames/support/
