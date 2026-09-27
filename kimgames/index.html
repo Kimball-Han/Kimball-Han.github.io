@@ -20,8 +20,7 @@
         <p class="lede">Board games, puzzles, arcade favorites, and cards in one app. Five board games now feature clearer turns, consistent move sounds, and victory celebrations.</p>
         <p>17 款经典游戏，随开随玩。<br>17 款經典遊戲，隨開隨玩。</p>
         <div class="actions">
-          <a class="button" href="https://apps.apple.com/us/app/kim-games/id6476502731" lang="en">US App Store</a>
-          <a class="button" href="https://apps.apple.com/cn/app/kim-games/id6476502731" lang="zh-Hans">中国区 App Store</a>
+          <a class="button" id="app-store-download" href="https://apps.apple.com/us/app/kim-games/id6476502731">Download on the App Store</a>
           <a class="button secondary" href="support/">Get Support</a>
         </div>
       </div>
@@ -79,5 +78,16 @@
     </div></section>
   </main>
   <footer><div class="shell"><span>© 2026 Kimball</span><span><a href="support/">Support</a> · <a href="privacy/">Privacy</a></span></div></footer>
+  <script>
+    (() => {
+      const language = navigator.language || 'en';
+      if (!/^zh(?:-|$)/i.test(language)) return;
+      const download = document.getElementById('app-store-download');
+      const traditional = /^zh-(?:Hant|TW|HK|MO)(?:-|$)/i.test(language);
+      download.href = 'https://apps.apple.com/cn/app/kim-games/id6476502731';
+      download.textContent = traditional ? '在 App Store 下載' : '在 App Store 下载';
+      download.lang = traditional ? 'zh-Hant' : 'zh-Hans';
+    })();
+  </script>
 </body>
 </html>
