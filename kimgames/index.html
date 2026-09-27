@@ -81,12 +81,17 @@
   <script>
     (() => {
       const language = navigator.language || 'en';
-      if (!/^zh(?:-|$)/i.test(language)) return;
       const download = document.getElementById('app-store-download');
-      const traditional = /^zh-(?:Hant|TW|HK|MO)(?:-|$)/i.test(language);
-      download.href = 'https://apps.apple.com/cn/app/kim-games/id6476502731';
-      download.textContent = traditional ? '在 App Store 下載' : '在 App Store 下载';
-      download.lang = traditional ? 'zh-Hant' : 'zh-Hans';
+      if (/^zh(?:-|$)/i.test(language)) {
+        const traditional = /^zh-(?:Hant|TW|HK|MO)(?:-|$)/i.test(language);
+        download.href = 'https://apps.apple.com/cn/app/kim-games/id6476502731';
+        download.textContent = traditional ? '在 App Store 下載' : '在 App Store 下载';
+        download.lang = traditional ? 'zh-Hant' : 'zh-Hans';
+      }
+      // iPadOS desktop browsing also identifies itself as Macintosh.
+      if (/iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent || '')) {
+        download.href = 'itms-apps://itunes.apple.com/app/id6476502731';
+      }
     })();
   </script>
 </body>
